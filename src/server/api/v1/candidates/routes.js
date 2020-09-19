@@ -1,15 +1,15 @@
-const router = require('express').Router();
-const controller = require('./controller');
+const router = require("express").Router();
+const controller = require("./controller");
 
-router.param('id', controller.id);
+router.param("id", controller.id);
 
 router
-  .route('/')
+  .route("/")
   .get(controller.all)
   .post(controller.create);
 
 router
-  .route('/:id')
+  .route("/:id")
   .get(controller.read)
   .put(controller.update)
   .delete(controller.delete);

@@ -1,8 +1,10 @@
-const mongoose = require('mongoose');
-const logger = require('./config/logger');
+const mongoose = require("mongoose");
+const logger = require("./config/logger");
 
-exports.connect = ({ username, password, protocol, url }, options = {}) => {
-  let databaseURL = '';
+exports.connect = ({
+  username, password, protocol, url,
+}, options = {}) => {
+  let databaseURL = "";
 
   // Generate the database url
   if (username && password) {
@@ -14,21 +16,21 @@ exports.connect = ({ username, password, protocol, url }, options = {}) => {
   // Connect to the database
   mongoose.connect(databaseURL, { ...options, useCreateIndex: true, useNewUrlParser: true });
 
-  mongoose.connection.on('error', err => {
+  mongoose.connection.on("error", (err) => {
     logger.error(`Database error: ${err}`);
   });
 
-  mongoose.connection.on('open', () => {
-    logger.info('Database on');
+  mongoose.connection.on("open", () => {
+    logger.info("Database on");
   });
 
-  mongoose.connection.on('close', () => {
-    logger.info('Database off');
+  mongoose.connection.on("close", () => {
+    logger.info("Database off");
   });
 
-  process.on('SIGINT', () => {
+  process.on("SIGINT", () => {
     mongoose.connection.close(() => {
-      logger.info('Database off when close');
+      logger.info("Database off when close");
       process.exit(0);
     });
   });
@@ -36,6 +38,6 @@ exports.connect = ({ username, password, protocol, url }, options = {}) => {
 
 exports.disconnect = () => {
   mongoose.connection.close(() => {
-    logger.info('Database off');
+    logger.info("Database off");
   });
 };

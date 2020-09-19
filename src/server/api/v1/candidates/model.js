@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+
 const { Schema } = mongoose;
 
 const fields = {
@@ -28,12 +29,12 @@ const fields = {
   },
   votes: {
     type: Number,
-    default: 0
+    default: 0,
   },
   positiveVotes: {
     type: Number,
-    default: 0
-  }
+    default: 0,
+  },
 };
 
 const candidate = new Schema(fields, {
@@ -47,15 +48,15 @@ const candidate = new Schema(fields, {
 });
 
 candidate
-  .virtual('percentage')
+  .virtual("percentage")
   .get(
     function getVotes() {
       const percentage = Math.round((this.positiveVotes / this.votes) * 100);
       return percentage || 0;
     },
-  )
+  );
 
 module.exports = {
-  Model: mongoose.model('candidate', candidate),
+  Model: mongoose.model("candidate", candidate),
   fields,
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Home from "./pages/Home";
 import Auth from "./pages/Auth";
@@ -17,5 +17,3 @@ function App() {
 }
 
 export default App;
-
-

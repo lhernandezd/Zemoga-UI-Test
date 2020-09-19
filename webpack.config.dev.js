@@ -1,4 +1,4 @@
-const { merge } = require('webpack-merge');
+const { merge } = require("webpack-merge");
 const baseConfig = require("./webpack.config.base");
 
 module.exports = merge(baseConfig, {
@@ -10,14 +10,14 @@ module.exports = merge(baseConfig, {
   module: {
     rules: [
       {
-        test: /\.(png|jp(e*)g|svg)$/,  
+        test: /\.(png|jp(e*)g|svg)$/,
         use: [{
-            loader: 'url-loader',
-            options: { 
-                limit: 8000, // Convert images < 8kb to base64 strings
-            } 
-        }]
-    }
-    ]
-  }
+          loader: "url-loader",
+          options: {
+            limit: 8000, // Convert images < 8kb to base64 strings
+          },
+        }],
+      },
+    ],
+  },
 });

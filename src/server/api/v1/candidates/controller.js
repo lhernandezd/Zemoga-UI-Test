@@ -1,4 +1,4 @@
-const { Model } = require('./model');
+const { Model } = require("./model");
 
 exports.id = async (req, res, next, id) => {
   try {
@@ -9,7 +9,7 @@ exports.id = async (req, res, next, id) => {
     } else {
       next({
         statusCode: 404,
-        message: 'Resource not found',
+        message: "Resource not found",
       });
     }
   } catch (error) {
@@ -47,14 +47,13 @@ exports.all = (req, res, next) => {
   });
 };
 
-exports.read = (req, res, next) => {
+exports.read = (req, res) => {
   const { doc = {} } = req;
   res.json({
     data: doc,
     success: true,
     statusCode: 200,
   });
-
 };
 
 exports.update = async (req, res, next) => {

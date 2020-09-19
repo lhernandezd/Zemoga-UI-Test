@@ -1,10 +1,10 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: './src/app/index.js',
+  entry: "./src/app/index.js",
   output: {
-    path: __dirname + '/src/public',
-    filename: 'bundle.js'
+    path: `${__dirname}/src/public`,
+    filename: "bundle.js",
   },
   module: {
     rules: [
@@ -14,7 +14,7 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        use: ['style-loader', 'css-loader'],
+        use: ["style-loader", "css-loader"],
         test: /\.s[ac]ss$/i,
       },
     ],
