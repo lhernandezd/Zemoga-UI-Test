@@ -1,10 +1,18 @@
 import React from 'react';
+import { Route, Switch, Redirect } from "react-router-dom";
+import Home from "./pages/Home";
+import Auth from "./pages/Auth";
 
 function App() {
   return (
-    <section className="App">
-      <h1>Hello World!!</h1>
-    </section>
+    <>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/home" component={Home} />
+        <Route path="/auth" component={Auth} />
+        <Redirect to="/" />
+      </Switch>
+    </>
   );
 }
 
