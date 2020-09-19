@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Rule of Thumb</title>
+  <link rel="stylesheet" href="css/screen.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
 </head>
 <body>
@@ -42,28 +43,31 @@
           <img class="navbar__icon burger__image" src="images/burger.svg" />
         </div>
       </div>
-      <div class="header__section">
-        <section class="section__article">
-          <h2 class="article__title">
-            <span class="article__title--span">What's is your opinion on</span>
-            Pope Francis?
-          </h2>
-          <p class="article__text">
-            He's Talking tough on clergy sexual abuse, but is he just another papal pervert protector? (thumbs down) or a true
-            pedophile punishing pontiff? (thumbs up).
-          </p>
-          <a class="article__link" href="#">
-            <img class="article__icon" src="images/wikipedia.svg" alt="Wikipedia" />
-            More Information
-          </a>
-          <p class="article__question">What's Your Verdict?</p>
-        </section>
-        <div class="section__vote">
-          <div class="vote vote--like">
-            <img class="section__icon" src="images/like.svg" alt="Thumbs up" />
-          </div>
-          <div class="vote vote--dislike">
-            <img class="section__icon section__icon--dislike" src="images/like.svg" alt="Thumbs down" />
+      <div class="header__container">
+        <div class="filter__container--blur"></div>
+        <div class="header__section">
+          <section class="section__article">
+            <h2 class="article__title">
+              <span class="article__title--span">What's is your opinion on</span>
+              Pope Francis?
+            </h2>
+            <p class="article__text">
+              He's Talking tough on clergy sexual abuse, but is he just another papal pervert protector? (thumbs down) or a true
+              pedophile punishing pontiff? (thumbs up).
+            </p>
+            <a class="article__link" href="#">
+              <img class="article__icon" src="images/wikipedia.svg" alt="Wikipedia" />
+              More Information
+            </a>
+            <p class="article__question">What's Your Verdict?</p>
+          </section>
+          <div class="section__vote">
+            <div class="vote vote--like">
+              <img class="section__icon" src="images/like.svg" alt="Thumbs up" />
+            </div>
+            <div class="vote vote--dislike">
+              <img class="section__icon section__icon--dislike" src="images/like.svg" alt="Thumbs down" />
+            </div>
           </div>
         </div>
       </div>
@@ -122,9 +126,9 @@
         <div class="card__progress">
           <span class="progress__value progress__value--positive"></span>
           <img class="progress__icon--like" src="images/like.svg" alt="like">
-          <span class="progress__like"> 50%</span>
+          <span class="progress__like">64%</span>
           <img class="progress__icon--dislike" src="images/like.svg" alt="dislike">
-          <span class="progress__dislike">50%</span>
+          <span class="progress__dislike">36%</span>
         </div>
       </article>
       <article class="stars__card card--2">
@@ -157,7 +161,7 @@
       </article>
       <article class="stars__card card--3">
         <div class="card__content">
-          <div class="content content--dislike">
+          <div class="active content content--dislike">
             <img src="images/like.svg" alt="dislike" class="content__icon">
           </div>
           <div class="content__body">
@@ -190,7 +194,7 @@
       </article>
       <article class="stars__card card--4">
         <div class="card__content">
-          <div class="content content--like">
+          <div class="active content content--like">
             <img src="images/like.svg" alt="dislike" class="content__icon">
           </div>
           <div class="content__body">
