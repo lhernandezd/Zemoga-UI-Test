@@ -1,11 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rule of Thumb</title>
-  </head>
-  <body>
-    <h1>Home</h1>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Rule of Thumb</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="navbar">
+        <nav class="navbar__section">
+          <div class="navbar__item navbar__item-brand">
+            <h1 class="navbar__title">Rule of Thumb</h1>
+          </div>
+        </nav>
+        <nav class="navbar__section navbar__section--right">
+          <div class="navbar__item">
+            <a class="navbar__link" href="./views/past-trial.html"
+              >Past Trials
+            </a>
+          </div>
+          <div class="navbar__item">
+            <a class="navbar__link" href="./views/how-it-works.html"
+              >How it works
+            </a>
+          </div>
+          <div class="navbar__item">
+            <a class="navbar__link" href="./views/login.html">
+              Log In/ Sign Up
+            </a>
+          </div>
+          <div class="navbar__item">
+            <a class="navbar__link" href="#">
+              <img class="navbar__icon search__image" src="images/search.svg" />
+            </a>
+          </div>
+        </nav>
+        <div id="burger" class="navbar__section navbar__section--toggle">
+          <img class="navbar__icon burger__image" src="images/burger.svg" />
+        </div>
+      </div>
+      <div class="header__section">
+        <section class="section__article">
+          <h2 class="article__title">
+            <span class="article__title--span">What's is your opinion on</span>
+            Pope Francis?
+          </h2>
+          <p class="article__text">
+            He's Talking tough on clergy sexual abuse, but is he just another papal pervert protector? (thumbs down) or a true
+            pedophile punishing pontiff? (thumbs up).
+          </p>
+          <a class="article__link" href="#">
+            <img class="article__icon" src="images/wikipedia.svg" alt="Wikipedia" />
+            More Information
+          </a>
+          <p class="article__question">What's Your Verdict?</p>
+        </section>
+        <div class="section__vote">
+          <div class="vote vote--like">
+            <img class="section__icon" src="images/like.svg" alt="Thumbs up" />
+          </div>
+          <div class="vote vote--dislike">
+            <img class="section__icon section__icon--dislike" src="images/like.svg" alt="Thumbs down" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header__footer">
+      <div class="footer__section footer__section--left">
+        <p class="section__text">CLOSING IN</p>
+      </div>
+      <div class="footer__section footer__section--right">
+        <p class="section__text section__text--right">
+          <span class="section__text section__text--span">22</span> days
+        </p>
+      </div>
+    </div>
+  </header>
+</body>
 </html>
