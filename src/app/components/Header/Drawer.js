@@ -6,10 +6,10 @@ import { useSpring, animated } from "react-spring";
 
 import Icon from "../shared/Icon";
 
-import SearchBlack from "../../../public/assets/searchblack.svg";
+import Search from "../../../public/assets/search.svg";
 
 const Drawer = styled(animated.aside)`
-  background-color: white;
+  background-color: #3a3a3a;
   border-radius: 5px;
   top: 4rem;
   position: relative;
@@ -30,7 +30,7 @@ const DrawerList = styled.ul`
 `;
 
 const DrawerItem = styled.li`
-  color: #3a3a3a;
+  color: white;
   display: flex;
   justify-content: center;
   margin: 2rem 0;
@@ -68,7 +68,7 @@ const DrawerComponent = ({ sections, open, setOpen }) => {
           </NavLink>
         ))}
         <DrawerItem>
-          <Icon src={SearchBlack} alt="Search icon" height="2rem" width="2rem" />
+          <Icon src={Search} alt="Search icon" height="2rem" width="2rem" />
         </DrawerItem>
       </DrawerList>
     </Drawer>

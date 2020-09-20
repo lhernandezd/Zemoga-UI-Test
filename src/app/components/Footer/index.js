@@ -12,7 +12,7 @@ const Footer = styled.footer`
   flex-wrap: wrap;
   height: 4rem;
   justify-content: space-between;
-  line-height: 5rem;
+  line-height: 2rem;
   margin-top: 2.5rem;
   width: 100%;
 `;

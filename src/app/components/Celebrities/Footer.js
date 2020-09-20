@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import FooterImage from "../../../public/assets/people.png";
@@ -15,8 +16,8 @@ const Footer = styled.div`
   flex-direction: column;
   grid-column: 6 span;
   justify-content: space-between;
-  padding: 1rem 0;
-  @media (min-width: 992px) {
+  padding: 1rem 1.2rem;
+  @media (min-width: 768px) {
     flex-direction: row;
     height: 5rem;
     grid-column: 12 span;
@@ -46,11 +47,15 @@ const FooterLink = styled.button`
   }
 `;
 
-const FooterComponent = () => (
+const FooterComponent = ({ showModal }) => (
   <Footer>
     <FooterText>Is there anyone else you would want us to add?</FooterText>
-    <FooterLink>Submit a Name</FooterLink>
+    <FooterLink onClick={() => showModal(true)}>Submit a Name</FooterLink>
   </Footer>
 );
+
+FooterComponent.propTypes = {
+  showModal: PropTypes.func.isRequired,
+};
 
 export default FooterComponent;

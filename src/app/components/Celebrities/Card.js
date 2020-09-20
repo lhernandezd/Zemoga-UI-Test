@@ -9,7 +9,7 @@ import config from "../../config.json";
 import Thumb from "../../../public/assets/like.svg";
 
 const Card = styled.article`
-  background-image: url(${(props) => props.backgroundImage});
+  background-image: url(${(props) => props.backgroundImage || "https://i.ibb.co/1fSnd3T/kanye.png"});
   background-size: cover;
   grid-column: 6 span;
   height: 35rem;
@@ -46,8 +46,12 @@ const ContentTitle = styled.h3`
   font-size: 2rem;
   font-weight: 400;
   margin: 0;
+  max-width: 25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
   vertical-align: sub;
   width: 100%;
+  white-space: nowrap;
 `;
 
 const ContentDescription = styled.p`
@@ -126,6 +130,7 @@ const Progress = styled.span`
   background-color: rgba(28, 187, 180, 0.9);
   display: inline-block;
   height: 100%;
+  transition: width 0.5s;
   width: ${(props) => props.percentage}%;
 `;
 
@@ -162,7 +167,7 @@ const CardComponent = ({
   const positive = votes ? percentage : 50;
   const negative = votes ? 100 - percentage : 50;
 
-  const fetchPost = async (payload) => {
+  const fetchPut = async (payload) => {
     try {
       await axios.put(`${config.baseUrl}/candidates/${id}`, payload);
       handleReload();
@@ -186,7 +191,7 @@ const CardComponent = ({
       if (active === "like") {
         payload.positiveVotes = positiveVotes + 1;
       }
-      fetchPost(payload);
+      fetchPut(payload);
     } else {
       setVoted(false);
     }
