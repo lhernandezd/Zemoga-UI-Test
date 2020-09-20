@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Container from "../shared/Container";
 import Navbar from "./Navbar";
 import Card from "./Card";
+import Footer from "./Footer";
 
 import HeaderImage from "../../../public/assets/francis.png";
 
@@ -27,6 +28,7 @@ const HeaderComponent = () => (
     <Container>
       <Navbar />
       <Card />
+      <Footer />
     </Container>
   </Header>
 );
