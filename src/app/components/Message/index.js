@@ -2,8 +2,6 @@ import React, { useState } from "react";
 
 import styled from "styled-components";
 
-import Container from "../shared/Container";
-
 import Close from "../../../public/assets/close.svg";
 
 const Message = styled.div`
@@ -75,24 +73,22 @@ const MessageComponent = () => {
   };
 
   return show && (
-    <Container>
-      <Message>
-        <MessageTitle>
-          Speak out. Be heard.
-          <MessageTitleSpan>Be counted</MessageTitleSpan>
-        </MessageTitle>
-        <MessageText>
-          Rule of Thumb is a crowd sourced court of public opinion where anyone
-          and everyone can speak out and speak freely. It’s easy: You share your
-          opinion, we analyze and put the data in a public report.
-        </MessageText>
-        <MessageIcon
-          onClick={handleCloseClick}
-          src={Close}
-          alt="Close button"
-        />
-      </Message>
-    </Container>
+    <Message>
+      <MessageTitle>
+        Speak out. Be heard.
+        <MessageTitleSpan>Be counted</MessageTitleSpan>
+      </MessageTitle>
+      <MessageText>
+        Rule of Thumb is a crowd sourced court of public opinion where anyone
+        and everyone can speak out and speak freely. It’s easy: You share your
+        opinion, we analyze and put the data in a public report.
+      </MessageText>
+      <MessageIcon
+        onClick={handleCloseClick}
+        src={Close}
+        alt="Close button"
+      />
+    </Message>
   );
 };
 
