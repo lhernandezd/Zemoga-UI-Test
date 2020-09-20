@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import Navbar from "./Navbar";
 import Container from "../shared/Container";
+import Navbar from "./Navbar";
+import Card from "./Card";
 
 import HeaderImage from "../../../public/assets/francis.png";
 
@@ -25,6 +26,7 @@ const HeaderComponent = () => (
   <Header>
     <Container>
       <Navbar />
+      <Card />
     </Container>
   </Header>
 );

@@ -10,9 +10,9 @@ const Icon = styled.img`
 `;
 
 const IconComponent = ({
-  alt, src, height, width, flip,
+  alt, src, height, width, flip, style,
 }) => (
-  <Icon alt={alt} src={src} height={height} width={width} flip={flip} />
+  <Icon alt={alt} src={src} height={height} width={width} flip={flip} style={style} />
 );
 
 IconComponent.propTypes = {
@@ -21,10 +21,13 @@ IconComponent.propTypes = {
   src: PropTypes.string.isRequired,
   height: PropTypes.string.isRequired,
   width: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  style: PropTypes.object,
 };
 
 IconComponent.defaultProps = {
   flip: false,
+  style: {},
 };
 
 export default IconComponent;

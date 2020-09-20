@@ -100,7 +100,7 @@ const NavbarComponent = () => {
   return (
     <Navbar>
       <NavLink to="/">
-        <NavbarTitle>Rule of Thumb.</NavbarTitle>
+        <NavbarTitle>Rule of Thumb</NavbarTitle>
       </NavLink>
       <NavbarMenu>
         {sections.map((section, index) => (
