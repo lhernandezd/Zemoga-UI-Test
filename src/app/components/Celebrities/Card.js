@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import axios from "axios";
 
 import Icon from "../shared/Icon";
+import config from "../../config.json";
 
 import Thumb from "../../../public/assets/like.svg";
 
@@ -25,17 +27,13 @@ const CardContent = styled.div`
   position: absolute;
 `;
 
-const StatusLike = styled.div`
+const Status = styled.div`
   align-items: center;
-  background-color: rgb(46,188,181);
+  background-color: ${(props) => (props.status ? "rgb(46,188,181)" : "rgb(250,174,48)")};
   display: inline-flex;
   height: 33px;
   justify-content: center;
   width: 33px;
-`;
-
-const StatusDislike = styled(StatusLike)`
-  background-color: rgb(250,174,48);
 `;
 
 const ContentBody = styled.div`
@@ -78,34 +76,40 @@ const ContentButtons = styled.div`
   width: 100%;
 `;
 
-const Button = styled.div`
+const Button = styled.button`
   align-items: center;
   border: none;
+  background-color: unset;
+  color: white;
   display: flex;
   height: 2rem;
   justify-content: center;
   margin-right: 1.25rem;
-  width: 2rem;
 `;
 
 const LikeButton = styled(Button)`
-  border: ${(props) => (props.active ? "2px solid white" : "none")};
   background-color: rgba(46,188,181,0.7);
   cursor: pointer;
+  outline-color: ${(props) => (props.active ? "white" : "none")};
 `;
 
 const DislikeButton = styled(Button)`
-  border: ${(props) => (props.active ? "2px solid white" : "none")};
   background-color: rgba(250,174,48,0.7);
   cursor: pointer;
+  outline-color: ${(props) => (props.active ? "white" : "none")};
 `;
 
 const VoteButton = styled(Button)`
   border: 1px solid white;
   font-size: 0.75rem;
-  padding: 0.75rem 1.25rem;
+  outline: none;
   text-align: center;
+  transition: background-color 0.3s;
   width: 6.25rem;
+  &:hover {
+    background-color: white;
+    color: #3a3a3a;
+  }
 `;
 
 const CardProgress = styled.div`
@@ -151,15 +155,49 @@ const ProgressDislikeText = styled(ProgressLikeText)`
 `;
 
 const CardComponent = ({
-  name, category, photoURL, description,
+  name, category, photo, description, handleReload, votes, positiveVotes, id, percentage,
 }) => {
-  const hola = "hola";
+  const [voted, setVoted] = useState(false);
+  const [active, setActive] = useState("none");
+  const positive = votes ? percentage : 50;
+  const negative = votes ? 100 - percentage : 50;
+
+  const fetchPost = async (payload) => {
+    try {
+      await axios.put(`${config.baseUrl}/candidates/${id}`, payload);
+      handleReload();
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(error);
+    }
+  };
+
+  const handleToggleLike = (button) => {
+    setActive(button);
+  };
+
+  const handleVote = (e, status) => {
+    e.preventDefault();
+    if (status !== "again") {
+      setVoted(true);
+      const payload = {
+        votes: votes + 1,
+      };
+      if (active === "like") {
+        payload.positiveVotes = positiveVotes + 1;
+      }
+      fetchPost(payload);
+    } else {
+      setVoted(false);
+    }
+  };
+
   return (
-    <Card backgroundImage={photoURL}>
+    <Card backgroundImage={photo}>
       <CardContent>
-        <StatusLike>
-          <Icon src={Thumb} alt="menu-icon" height="1.25rem" width="1.25rem" />
-        </StatusLike>
+        <Status status={percentage >= 50}>
+          <Icon src={Thumb} alt="menu-icon" height="1.25rem" width="1.25rem" flip={percentage < 50} />
+        </Status>
         <ContentBody>
           <ContentTitle>{name}</ContentTitle>
           <ContentDescription>
@@ -173,24 +211,34 @@ const CardComponent = ({
             {description}
           </ContentText>
           <ContentButtons>
-            <LikeButton active>
-              <Icon src={Thumb} alt="Thumb Up" height="1.25rem" width="1.25rem" />
-            </LikeButton>
-            <DislikeButton>
-              <Icon src={Thumb} alt="Thumb Down" height="1.25rem" width="1.25rem" flip />
-            </DislikeButton>
-            <VoteButton active>
-              Vote Now
-            </VoteButton>
+            {!voted && (
+              <>
+                <LikeButton active={active === "like"} onClick={() => handleToggleLike("like")}>
+                  <Icon src={Thumb} alt="Thumb Up" height="1.25rem" width="1.25rem" />
+                </LikeButton>
+                <DislikeButton active={active === "dislike"} onClick={() => handleToggleLike("dislike")}>
+                  <Icon src={Thumb} alt="Thumb Down" height="1.25rem" width="1.25rem" flip />
+                </DislikeButton>
+              </>
+            )}
+            {!voted
+              ? <VoteButton onClick={handleVote}>Vote Now</VoteButton>
+              : <VoteButton onClick={(e) => handleVote(e, "again")}>Vote Again</VoteButton>}
           </ContentButtons>
         </ContentBody>
       </CardContent>
       <CardProgress>
-        <Progress percentage={64} />
+        <Progress percentage={positive} />
         <ProgressIcon src={Thumb} status="like" rotate={0} />
-        <ProgressLikeText>64%</ProgressLikeText>
+        <ProgressLikeText>
+          {positive}
+          %
+        </ProgressLikeText>
         <ProgressIcon src={Thumb} status="dislike" rotate={180} />
-        <ProgressDislikeText>36%</ProgressDislikeText>
+        <ProgressDislikeText>
+          {negative}
+          %
+        </ProgressDislikeText>
       </CardProgress>
     </Card>
   );
@@ -199,8 +247,13 @@ const CardComponent = ({
 CardComponent.propTypes = {
   name: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
-  photoURL: PropTypes.string.isRequired,
+  photo: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  handleReload: PropTypes.func.isRequired,
+  votes: PropTypes.number.isRequired,
+  positiveVotes: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
+  percentage: PropTypes.number.isRequired,
 };
 
 export default CardComponent;
