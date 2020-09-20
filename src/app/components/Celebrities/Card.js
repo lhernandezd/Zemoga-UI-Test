@@ -6,7 +6,7 @@ import Icon from "../shared/Icon";
 
 import Thumb from "../../../public/assets/like.svg";
 
-const Card = styled.div`
+const Card = styled.article`
   background-image: url(${(props) => props.backgroundImage});
   background-size: cover;
   height: 35rem;
@@ -165,6 +165,7 @@ const CardComponent = ({
           <ContentTitle>{name}</ContentTitle>
           <ContentDescription>
             <ContentDescriptionSpan>1 month ago</ContentDescriptionSpan>
+            {" "}
             in
             {" "}
             {category}

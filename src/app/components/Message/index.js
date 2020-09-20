@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-
 import styled from "styled-components";
 
 import Close from "../../../public/assets/close.svg";
 
-const Message = styled.div`
+const Message = styled.section`
   align-items: center;
   background-color: #ebebeb;
   display: flex;

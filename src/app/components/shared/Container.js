@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import styled from "styled-components";
 
-const ContainerComponent = styled.div`
+const ContainerComponent = styled.main`
   height: 100%;
   margin: 0 auto;
   max-width: 80rem;

@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 import Card from "./Card";
+import Footer from "./Footer";
 
-const CelebritiesContainer = styled.article`
+const CelebritiesContainer = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -22,6 +23,25 @@ const CelebritiesComponent = () => (
       photoURL="https://i.ibb.co/1fSnd3T/kanye.png"
       description="Vestibulum diam ante, porttitos a odio eget, rhoncus neque. Aenean eu velit libero."
     />
+    <Card
+      name="Kanye West"
+      category="Entertainment"
+      photoURL="https://i.ibb.co/1fSnd3T/kanye.png"
+      description="Vestibulum diam ante, porttitos a odio eget, rhoncus neque. Aenean eu velit libero."
+    />
+    <Card
+      name="Kanye West"
+      category="Entertainment"
+      photoURL="https://i.ibb.co/1fSnd3T/kanye.png"
+      description="Vestibulum diam ante, porttitos a odio eget, rhoncus neque. Aenean eu velit libero."
+    />
+    <Card
+      name="Kanye West"
+      category="Entertainment"
+      photoURL="https://i.ibb.co/1fSnd3T/kanye.png"
+      description="Vestibulum diam ante, porttitos a odio eget, rhoncus neque. Aenean eu velit libero."
+    />
+    <Footer />
   </CelebritiesContainer>
 );
 
