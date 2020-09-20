@@ -5,13 +5,12 @@ import Card from "./Card";
 import Footer from "./Footer";
 
 const CelebritiesContainer = styled.section`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  @media (min-width: 992px) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: grid;
+  align-items: center;
+  grid-gap: 1em 1em;
+  grid-template-columns: repeat(6,[col-start] 1fr);
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(12,[col-start] 1fr);
   }
 `;
 

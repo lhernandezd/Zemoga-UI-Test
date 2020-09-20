@@ -38,7 +38,7 @@ const FooterLink = styled.a`
   color: #979797;
   font-size: 0.75rem;
   margin: 0.625rem;
-  &:nth-child(0) {
+  &:first-child{
     margin-left: 0;
   }
 `;

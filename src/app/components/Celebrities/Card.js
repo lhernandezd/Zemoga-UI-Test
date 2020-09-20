@@ -9,11 +9,10 @@ import Thumb from "../../../public/assets/like.svg";
 const Card = styled.article`
   background-image: url(${(props) => props.backgroundImage});
   background-size: cover;
+  grid-column: 6 span;
   height: 35rem;
   margin-bottom: 2.5rem;
   position: relative;
-  max-width: 30rem;
-  width: 100%;
 `;
 
 const CardContent = styled.div`

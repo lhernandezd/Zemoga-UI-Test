@@ -13,12 +13,13 @@ const Footer = styled.div`
   background-size: auto, auto;
   display: flex;
   flex-direction: column;
+  grid-column: 6 span;
   justify-content: space-between;
   padding: 1rem 0;
-  width: 100%;
   @media (min-width: 992px) {
     flex-direction: row;
     height: 5rem;
+    grid-column: 12 span;
   }
 `;
 
