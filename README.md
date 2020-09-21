@@ -18,7 +18,7 @@ Layout: [Live Demo](https://lhernandezd.github.io/Zemoga-UI-Test/)
 The projects is divided in 3 branches:
 
 - **layout**: Branch with the HTML and CSS structure for the project.
-- **interactive:** Branch that contains the interactive of the project (First with VanillaJS and then with React and NodeJS).
+- **interactive:** Branch that contains the interactive of the project (React and NodeJS).
 - **master:** Branch that contains the entire project.
 
 **Note:** To run this project is mandatory to have installed git, nodeJS and mongoDB.
