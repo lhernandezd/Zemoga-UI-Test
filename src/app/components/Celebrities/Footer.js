@@ -27,10 +27,9 @@ const Footer = styled.div`
 const FooterText = styled.p`
   font-weight: 150;
   font-size: 1.5rem;
-  margin-left: 1.2rem;
   text-align: center;
   @media (min-width: 992px) {
-    font-size: 2rem;
+    font-size: 1.7rem;
     text-align: right;
   }
 `;
