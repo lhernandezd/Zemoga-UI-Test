@@ -11,7 +11,8 @@
     "build": "webpack --config webpack.config.prod.js",
     "server": "cross-env NODE_ENV=development nodemon --inspect src/index",
     "lint": "eslint --ignore-path .gitignore .",
-    "db:reset": "node src/server/db/drop.js"
+    "db:reset": "node src/server/db/drop.js",
+    "fillDatabase": "node src/app/scripts/fillDatabase.js"
   },
   "repository": {
     "type": "git",
