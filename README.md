@@ -2,6 +2,11 @@
 
 This project was built with React (as our frontend framework) and NodeJS with mongoDB (as our backend).
 
+## Live demo
+Layout branch deployed with GitHub Pages, relate to the link below.
+
+Layout: [Live Demo](https://lhernandezd.github.io/Zemoga-UI-Test/)
+
 ## Technologies
 
 - JS and Web api (es6 +)
@@ -13,7 +18,7 @@ This project was built with React (as our frontend framework) and NodeJS with mo
 The projects is divided in 3 branches:
 
 - **layout**: Branch with the HTML and CSS structure for the project.
-- **interactive:** Branch that contains the interactive of the project (First with VanillaJS and then with React and NodeJS).
+- **interactive:** Branch that contains the interactive of the project (React and NodeJS).
 - **master:** Branch that contains the entire project.
 
 **Note:** To run this project is mandatory to have installed git, nodeJS and mongoDB.
@@ -24,7 +29,7 @@ The projects is divided in 3 branches:
 
 1. Clone the repository
 
-        git clone https://github.com/lhernandezd/rule-thumb.git
+        git clone https://github.com/lhernandezd/Zemoga-UI-Test.git
 
 2. Enter the project route
 

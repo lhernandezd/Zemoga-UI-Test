@@ -20,11 +20,16 @@ const Modal = styled.div`
 const ModalBody = styled.section`
   background: #3a3a3a;
   height: auto;
-  left:50%;
-  position:fixed;
+  max-width: 525px;
+  left: 50%;
+  position: fixed;
   transform: translate(-50%,-50%);
-  top:50%;
-  width: 30%;
+  top: 50%;
+  width: 60%;
+  @media (max-width: 550px) {
+    height: 100%;
+    width: 100%;
+  }
 `;
 
 const Button = styled.button`

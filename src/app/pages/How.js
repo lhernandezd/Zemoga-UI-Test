@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Auth() {
+function How() {
   return (
-    <section className="Auth" style={{ padding: 20 }}>
-      Log In / Sign Up
+    <section className="How" style={{ padding: 20 }}>
+      How it works
       <Link to="/" style={{ color: "orange", display: "block", marginTop: "2rem" }}>
         Go to Home &gt;
       </Link>
@@ -12,4 +12,4 @@ function Auth() {
   );
 }
 
-export default Auth;
+export default How;
