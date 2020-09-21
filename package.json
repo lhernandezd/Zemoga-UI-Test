@@ -6,10 +6,12 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production node src/index",
     "dev": "webpack-dev-server --config webpack.config.dev.js --open --hot",
-    "test": "cross-env NODE_ENV=test echo \"Error: no test specified\" && exit 1",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
     "build": "webpack --config webpack.config.prod.js",
     "server": "cross-env NODE_ENV=development nodemon --inspect src/index",
-    "lint": "eslint --ignore-path .gitignore ."
+    "lint": "eslint --ignore-path .gitignore .",
+    "db:reset": "node src/server/db/drop.js"
   },
   "repository": {
     "type": "git",
@@ -48,9 +50,11 @@
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
+    "@testing-library/cypress": "^7.0.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "css-loader": "^4.3.0",
+    "cypress": "^5.2.0",
     "eslint": "^7.9.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-import": "^2.22.0",

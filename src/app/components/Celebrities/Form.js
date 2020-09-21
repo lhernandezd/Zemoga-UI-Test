@@ -92,7 +92,7 @@ const FormComponent = ({ handleModal, fetchCandidates }) => {
   };
 
   return (
-    <FormContainer>
+    <FormContainer id="candidate-form">
       <FormTitle>Add Candidate</FormTitle>
       <Formik
         validationSchema={FormSchema}
@@ -120,7 +120,7 @@ const FormComponent = ({ handleModal, fetchCandidates }) => {
               />
             </FormField>
             <FormField>
-              <Label htmlFor="photo">Photo</Label>
+              <Label htmlFor="photo">Photo URL</Label>
               <Field
                 id="photo"
                 name="photo"
@@ -149,7 +149,7 @@ const FormComponent = ({ handleModal, fetchCandidates }) => {
                 </option>
               </Field>
             </FormField>
-            <FormButton type="submit" disabled={isSubmitting}>
+            <FormButton id="submit-form-button" type="submit" disabled={isSubmitting}>
               Submit
             </FormButton>
           </FormikForm>

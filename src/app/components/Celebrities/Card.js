@@ -218,29 +218,29 @@ const CardComponent = ({
           <ContentButtons>
             {!voted && (
               <>
-                <LikeButton active={active === "like"} onClick={() => handleToggleLike("like")}>
+                <LikeButton className="test-like" active={active === "like"} onClick={() => handleToggleLike("like")}>
                   <Icon src={Thumb} alt="Thumb Up" height="1.25rem" width="1.25rem" />
                 </LikeButton>
-                <DislikeButton active={active === "dislike"} onClick={() => handleToggleLike("dislike")}>
+                <DislikeButton className="test-dislike" active={active === "dislike"} onClick={() => handleToggleLike("dislike")}>
                   <Icon src={Thumb} alt="Thumb Down" height="1.25rem" width="1.25rem" flip />
                 </DislikeButton>
               </>
             )}
             {!voted
-              ? <VoteButton onClick={handleVote}>Vote Now</VoteButton>
-              : <VoteButton onClick={(e) => handleVote(e, "again")}>Vote Again</VoteButton>}
+              ? <VoteButton className="test-vote-now" onClick={handleVote}>Vote Now</VoteButton>
+              : <VoteButton className="test-vote-again" onClick={(e) => handleVote(e, "again")}>Vote Again</VoteButton>}
           </ContentButtons>
         </ContentBody>
       </CardContent>
       <CardProgress>
         <Progress percentage={positive} />
         <ProgressIcon src={Thumb} status="like" rotate={0} />
-        <ProgressLikeText>
+        <ProgressLikeText className="test-positive-percentage">
           {positive}
           %
         </ProgressLikeText>
         <ProgressIcon src={Thumb} status="dislike" rotate={180} />
-        <ProgressDislikeText>
+        <ProgressDislikeText className="test-negative-percentage">
           {negative}
           %
         </ProgressDislikeText>

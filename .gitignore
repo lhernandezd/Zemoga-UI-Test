@@ -2,3 +2,5 @@
 .DS_Store
 Thumbs.db
 .env
+cypress/videos
+cypress/screenshots

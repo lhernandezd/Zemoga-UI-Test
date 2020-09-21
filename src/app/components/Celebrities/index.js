@@ -65,7 +65,7 @@ const CelebritiesComponent = () => {
         />
       ))}
       <Footer showModal={showModal} />
-      <Modal show={show} handleModal={showModal}>
+      <Modal show={show} handleModal={showModal} id="modal">
         <Form handleModal={showModal} fetchCandidates={fetchGet} />
       </Modal>
     </CelebritiesContainer>

@@ -50,7 +50,7 @@ const FooterLink = styled.button`
 const FooterComponent = ({ showModal }) => (
   <Footer>
     <FooterText>Is there anyone else you would want us to add?</FooterText>
-    <FooterLink onClick={() => showModal(true)}>Submit a Name</FooterLink>
+    <FooterLink id="submit-candidate" onClick={() => showModal(true)}>Submit a Name</FooterLink>
   </Footer>
 );
 
